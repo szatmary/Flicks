@@ -44,7 +44,6 @@ bother - they'll be inexact in any circumstance.
 * 1/96000 fps frame:     7350 flicks
 * 1/192000 fps frame:     3675 flicks
 
-
 ## Motivation
 
 When working creating visual effects for film, television, and other media, it is common
