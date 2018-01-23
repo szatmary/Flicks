@@ -44,6 +44,7 @@ bother - they'll be inexact in any circumstance.
 * 1/96000 fps frame:     7350 flicks
 * 1/192000 fps frame:     3675 flicks
 
+
 ## Motivation
 
 When working creating visual effects for film, television, and other media, it is common
@@ -55,6 +56,10 @@ Knowing that you should never, ever use floating point representations for accum
 simulated time (lest your temporal accuracy degrade over time), the std::chrono time tools
 in C++ are ideal. However, the highest usable resolution, nanoseconds, doesn't evenly divide
 common film & media framerates. This was the genesis of this unit.
+
+## Limitations 
+
+This implementation uses c++11s `std::chrono::nanoseconds` to represent a flicks numerator. C++11 defines `std::chrono::nanoseconds::rep` as "A signed integral type of at least 64 bits". Therefore a `flicks` is capable of representing absolute time values of more than 414 years into the future (and past) relative to an epoch before an integer overflow occurs. 705600000 also fits easily into a 32 bit signed type, making a flick suitable to be used in many modern media containers, protocols and applications.
 
 ## Acknowledgements
 
